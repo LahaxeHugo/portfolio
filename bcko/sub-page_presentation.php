@@ -16,9 +16,9 @@ $data = $presentation->load();
 		<div class="profile-pic">
 			<p>Photo de profile :</p>
 			<div>
-				<img src="../assets/img/<?php echo $data[0]['picture']; ?>">
+				<img id="preview" src="../assets/img/<?php echo $data[0]['picture']; ?>">
 			</div>
-			<input type="file" name="picture">
+			<input type="file" onchange="readURL(this);" name="picture">
 		</div>
 		<div>
 			<p>Description :</p>

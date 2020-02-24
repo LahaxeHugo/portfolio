@@ -3,6 +3,9 @@
 include 'include.php';
 ( $dbObj = getconnectionObj() ) or die( $stopScript );
 
+$site = new site($dbObj, PORTFOLIO_SITE);
+$site_data = $site->load();
+
 $general = new general_info($dbObj, PORTFOLIO_GENERAL);
 $general_data = $general->load();
 
@@ -13,6 +16,7 @@ $career = new career($dbObj, PORTFOLIO_CAREER);
 $career->order_name = 'order_career';
 $career_data = $career->load();
 $career_str = '';
+
 foreach($career_data as $career_el) {
 	$career_str .='<section class="'.$career_el['type'].'">'
 							.		'<p class="date">'.$career_el['date'].'</p>'
@@ -44,7 +48,7 @@ $projects->order_name = 'order_projects';
 $projects_data = $projects->load();
 $projects_str = '';
 foreach($projects_data as $projects_el) {
-	$projects_str .='<section link="'.$projects_el['link_page'].'">'
+	$projects_str .='<section link="'.$projects_el['link'].'">'
 								.		'<header><h3>'.$projects_el['name'].'</h3></header>'
 								.		'<div class="img"><img src="assets/img/'.$projects_el['image'].'"></div>'
 								.		'<footer><p>'.$projects_el['description'].'</p></footer>'
@@ -55,7 +59,9 @@ foreach($projects_data as $projects_el) {
 <html>
 	<head>
     <meta charset="utf-8">
-    <title>Hugo Lahaxe - Portfolio</title>
+    <title><?php echo $site_data[0]['name']?></title>
+    <link rel="icon" href="assets/img/<?php echo $site_data[0]['icon']?>">
+    <meta name="description" content="<?php echo $site_data[0]['description']?>">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/master.css">
   </head>
@@ -63,7 +69,7 @@ foreach($projects_data as $projects_el) {
   	
   	<!-- HEADER -->
   	<header>
-    	<h2 class="logo">Hugo Lahaxe</h2>
+    	<h2 class="logo"><?php echo $general_data[0]['name']?></h2>
     	
 			<a href="#main-menu" class="menu-toggle">
 				<div class="burger-breads">

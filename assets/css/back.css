@@ -8,7 +8,7 @@ body {
 	display: flex;
 }
 
-.delete-popup {
+.delete-popup, .sort-popup {
 	width: 100%;
 	height: 100vh;
 	position: fixed;
@@ -20,7 +20,7 @@ body {
 	align-items: center;
 }
 
-.delete-popup > .backdrop {
+.backdrop {
 	position: fixed;
 	display: block;
 	left: 0;
@@ -29,16 +29,39 @@ body {
 	height:100%;
 	z-index: 50;
 }
-.delete-popup > .box {
-	width: 400px;
+.delete-popup > .box, .sort-popup > .box {
+	width: 500px;
 	background-color: white;
 	text-align: center;
 	z-index: 100;
 	border: 1px solid #000;
-	padding: 15px 10px;
+	padding: 0 0 20px 0;
+	box-sizing: border-box;
 }
-.delete-popup > .box > p {
-	margin-bottom: 20px;
+
+.sort-popup > .box header, .delete-popup > .box header {
+	background-color: #DDD;
+	padding: 10px 0;
+	font-size: 1.5em;
+	font-weight: bold;
+}
+.sort-popup > .box header + p, .delete-popup > .box header + p {
+	margin: 20px 10px;
+}
+.delete-popup > .box header + p span {
+	font-weight: bold;
+}
+
+.sort-popup .elements {
+	display: flex;
+	flex-direction: column;
+}
+.sort-popup .elements li {
+	border: 1px solid black;
+	background-color: #DDD;
+	margin: 5px 20px;
+	padding: 10px;
+	font-weight: bold;
 }
 
 .naviguation {
@@ -79,12 +102,12 @@ h1 {
 }
 
 .content {
-	/*height: 1000px;*/
 	min-height: 100vh;
 	margin-left: 200px;
 	width: 100%;
 	background-color: #E7E7F7;
 	padding: 40px 20px 20px 20px;
+	box-sizing: border-box;
 }
 
 .content > h2 {
@@ -94,4 +117,123 @@ h1 {
 }
 .content > hr {
 	border: .5px solid black;
+}
+
+.content form > div {
+	margin: 10px 0;
+	display: flex;
+	flex-direction: column;
+}
+.content form > div > *:first-child {
+	margin-bottom: 5px;
+}
+.content input:not([type="submit"]) {
+	width: 500px;
+}
+.content input[type="submit"] {
+	width: 100px;
+	height: 40px;
+}
+.content textarea {
+	width: 500px;
+	height: 200px;
+}
+.content select {
+	width: 500px;
+}
+
+.content .element {
+	border: 1px solid #AAA;
+	display: flex;
+	justify-content: space-between;
+	margin: 20px 0;
+	padding: 15px;
+}
+.content .element .button {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-left: 20px;
+}
+.content .element .button a:first-child {
+	margin-bottom: 10px;
+}
+
+.content .element-data > div {
+	display: flex;
+	flex-shrink: 0;
+	margin-bottom: 10px;
+}
+.content .element-data > div:last-child {
+	margin-bottom: 0;
+}
+.content .element-data > div p:first-child {
+	margin-right: 10px;
+	font-weight: bold;
+}
+
+.content .add-element, .content .order-element {
+	margin: 20px 0;
+}
+
+.content .element-image {
+	display: flex;
+	flex-direction: column;
+}
+.content .element-image > div {
+	margin-top: 10px;
+	border: 1px solid #AAA;
+	width: 300px;
+	height: 150px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.content .element-image > div img {
+	max-width: 300px;
+	max-height: 150px;
+}
+
+.content .icon-pic div {
+	width: 100px;
+	height: 100px;
+	border: 1px solid #AAA;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+}
+.content .icon-pic img {
+	max-width: 100px;
+	max-height: 100px;
+}
+
+.content .profile-pic div {
+	width: 300px;
+	height: 300px;
+	border: 1px solid #AAA;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.content .profile-pic img {
+	max-width: 300px;
+	max-height: 300px;
+}
+
+.content form .image div {
+	width: 500px;
+	height: 300px;
+	border: 1px solid #AAA;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.content form .image div img {
+	max-width: 500px;
+	height: 300px;
+}
+form div > *:first-child {
+	font-weight: bold;
 }

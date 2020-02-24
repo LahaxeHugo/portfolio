@@ -9,6 +9,7 @@ $data = $career->load();
 
 $length = count($data);
 $element_display = '';
+$sort_list = '';
 foreach ($data as $element) {	
  	$element_display	.='<div class="element" data-id="' .$element['id'] .'">'
  	 									.		'<div class="element-data">'
@@ -38,6 +39,8 @@ foreach ($data as $element) {
  	 									.			'<a href="" class="delete">Delete</a>'
  	 									.		'</div>'
  	 									.	'</div>';
+	
+	$sort_list .=	'<li data-id="'.$element['id'].'" id="'.$element['order_career'].'">'.$element['name'].'</li>';
 }
 unset($element);
 
@@ -55,4 +58,7 @@ unset($element);
 	<div class="content-display" data-length="<?php echo $length;?>">
 		<?php echo $element_display;?>
 	</div>
+</div>
+<div class="list-hidden" style="display: none;">
+	<?php echo $sort_list;?>;
 </div>

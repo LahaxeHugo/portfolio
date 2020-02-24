@@ -17,6 +17,8 @@ if(isset($_FILES['picture']['name']) && !empty($_FILES['picture']['name'])) {
 	if(($currentImg = $general->getFile())) {
 		if(file_exists('../assets/img/'.$currentImg)) unlink('../assets/img/'.$currentImg);
 	}
+	error_log($currentImg);
+	error_log($update_array['picture']);
 	move_uploaded_file($_FILES['picture']['tmp_name'], '../assets/img/'.$update_array['picture']);
 }
 

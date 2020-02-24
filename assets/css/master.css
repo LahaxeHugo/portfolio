@@ -30,6 +30,7 @@ body > section:nth-child(n+3) h2::after {
 
 /* HERO */
 #hero {
+	margin-top: 60px;
 	background-image: url('../img/background-hero.png');
 	background-attachment: fixed;
 	background-size: cover;
@@ -200,6 +201,7 @@ body > section:nth-child(n+3) h2::after {
 	background-color: white;
 }
 #skills .content {
+	margin: 0 30px;
 	margin-top: 40px;
 	display: flex;
 	flex-wrap: wrap;

@@ -2,7 +2,6 @@
 
 session_start();
 
-
 ?>
 
 <!DOCTYPE html>
@@ -34,12 +33,30 @@ session_start();
     <div class="delete-popup">
     	<div class="backdrop"></div>
     	<div class="box">
+    		<header>
+    			<p>Supprimer un élément</p>
+    		</header>
     		<p>Voulez-vous supprimer <span></span> ?</p>
     		<button class="delete">Supprimer</button>
     		<button class="cancel">Annuler</button>
     	</div>
     </div>
+    <div class="sort-popup">
+    	<div class="backdrop"></div>
+    	<div class="box">
+    		<header>
+	    		<p>Modifier l'ordre</p>
+	    	</header>
+	    	<p>Déplacer les colonnes en les faisant glisser <br>vers le haut ou vers le bas.</p>
+	    	<ul class="elements">
+	    		
+	    	</ul>
+    		<button class="save">Enregistrer</button>
+    		<button class="cancel">Annuler</button>
+    	</div>
+    </div>
     <script src="../assets/js/jquery-3.4.1.min.js"></script>
+    <script src="../assets/js/jquery-ui.min.js"></script>
     <script src="../assets/js/back.js"></script>
   </body>
 </html>

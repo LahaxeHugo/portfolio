@@ -42,7 +42,6 @@ class base_element {
 		$arr2str = $this->convertArr2Query($arr);
 		
 		$insert_req = 'INSERT INTO `' .$this->dbTable .'` SET ' .$arr2str;
-		error_log($insert_req);
 		if($this->dbObj->query($insert_req) === FALSE) {
 			$errorInfo = $this->dbObj->errorInfo();
 			$tStr = sprintf(DBERROR_fmt, __FILE__, __LINE__, $errorInfo[1], $errorInfo[2], $insert_req);
@@ -61,8 +60,10 @@ class base_element {
 		}
 	}
 	
-	public function order() {
-		
+	public function order($arr = array()) {
+		foreach ($arr as $id => $order) {
+			$this->update(array($this->order_name => $order), $id);
+		} 
 	}
 	
 	public function delete($id = 0) {
@@ -72,13 +73,6 @@ class base_element {
 			$tStr = sprintf(DBERROR_fmt, __FILE__, __LINE__, $errorInfo[1], $errorInfo[2], $del_req);
 			error_log($tStr); unset($tStr, $errorMsg);
 		}
-	}
-	
-	public function updateImg() {
-		
-	}
-	public function addImg() {
-		
 	}
 	
 	public function getFile($name = 'picture', $id = 1) {
@@ -92,7 +86,18 @@ class base_element {
 			$image = $getImg_res->fetch();
 			return $image[$name];
 		}
-		
+	}
+	
+	public function getMaxId() {
+		$maxId_req = 'SELECT MAX(`id`) AS `max` FROM `' .$this->dbTable.'`';
+		if(($maxId_res = $this->dbObj->query($maxId_req)) === FALSE) {
+			$errorInfo = $this->dbObj->errorInfo();
+			$tStr = sprintf(DBERROR_fmt, __FILE__, __LINE__, $errorInfo[1], $errorInfo[2], $maxId_req);
+			error_log($tStr); unset($tStr, $errorMsg);
+		} else {
+			$maxId_val = $maxId_res->fetch();
+			return $maxId_val['max'];
+		}
 	}
 }
 

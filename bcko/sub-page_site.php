@@ -16,9 +16,9 @@ $data = $general->load();
 		<div class="icon-pic">
 			<p>Icône du site : </p>
 			<div>
-				<img src="../assets/img/<?php echo $data[0]['icon']; ?>">
+				<img id="preview" src="../assets/img/<?php echo $data[0]['icon']; ?>">
 			</div>
-			<input type="file" name="icon">
+			<input type="file" onchange="readURL(this);" name="icon">
 		</div>
 		<div>
 			<p>Titre du site :</p>
