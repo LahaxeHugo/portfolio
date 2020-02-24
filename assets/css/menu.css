@@ -1,12 +1,18 @@
-header {
+body > header {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 	background-color: #1A1E23;
 	padding: 15px 60px;
+	position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-header > h2 {
+body > header > h2 {
 	font-weight: bold;
   font-size: 1.8em;
   color: #A43831;
@@ -149,7 +155,7 @@ header > h2 {
 }
 
 @media (max-width: 900px) {
-	header {
+	body > header {
 		padding: 15px 20px;
 	}
 }

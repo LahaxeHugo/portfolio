@@ -47,6 +47,8 @@ define('PORTFOLIO_GENERAL', 'general');
 define('PORTFOLIO_SITE', 'site');
 define('PORTFOLIO_PRESENTATION', 'presentation');
 define('PORTFOLIO_CAREER', 'career');
+define('PORTFOLIO_SKILLS', 'skills');
+define('PORTFOLIO_PROJECTS', 'projects');
 
 // CLASSES
 

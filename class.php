@@ -104,6 +104,11 @@ class presentation extends base_element {
 }
 class career extends base_element {
 }
+
+class skills extends base_element {
+}
+class projects extends base_element {
+}
 	
 	
 ?>
