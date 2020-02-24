@@ -1,0 +1,117 @@
+/* IMPORT */
+@import 'reset.css';
+@import 'menu.css';
+
+/* GENERAL */
+body {
+	font-family: 'Roboto', sans-serif;
+}
+body > section {
+	margin-bottom: 100px;
+}
+
+body > section:not(.hero) h2 {
+	font-size: 2em;
+	text-transform: uppercase;
+	text-align: center;
+	font-weight: bold; /*medium*/
+}
+body > section:not(.hero) h2::after {
+	content: '';
+	display: block;
+	width: 400px;
+	position: relative;
+	left: 50%;
+	top: 5px;
+	transform: translate(-50%);
+	background-color: black;
+	height: 2px;
+}
+
+/* HERO */
+#hero {
+	background-image: url('../img/background-hero.png');
+	background-attachment: fixed;
+	background-size: cover;
+	height: calc(100vh - 60px);
+	color: white;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+}
+
+#hero h1 {
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 3em;
+	margin-bottom: 10px;
+}
+#hero h2 {
+	font-size: 1.2em;
+	margin-top: 25px;
+}
+#hero h2.description {
+	margin-bottom: 60px;
+}
+#hero .arrow-scrolldown {
+	position: absolute;
+	bottom: 20px;
+	left: 50%;
+	transform: translate(-50%);
+}
+#hero .arrow-scrolldown img {
+	width: 40px;
+}
+
+/* ABOUT */
+#about .content {
+	display: flex;
+	margin: 0 13%;
+	margin-top: 40px;
+}
+#about .content-left {
+	border: 1px solid #DDD;
+	border-radius: 10px;
+	width: 300px;
+	height: 300px;
+}
+#about .content-left img {
+	height: 100%;
+	object-fit: cover;
+	border-radius: 10px;
+}
+#about .content-right {
+	margin-left: 30px;
+}
+#about .content-right {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+#about .about-links {
+	display: flex;
+	flex-direction: row;
+	margin-top: 30px;
+}
+#about .about-links > div {
+	background-color: #A43831;
+}
+#about .about-links > div a {
+	display: flex;
+	align-items: center;
+	height: 40px;
+	color: black;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-weight: bold; /*medium*/
+	padding: 0 10px;
+}
+#about .about-links > div a img {
+	margin-right: 10px;
+}
+#about .about-links > div:first-child {
+	margin-right: 20px;
+}

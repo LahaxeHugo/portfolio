@@ -1,0 +1,97 @@
+@import 'reset.css';
+
+html, body {
+	font-family: 'Roboto', sans-serif;
+}
+
+body {
+	display: flex;
+}
+
+.delete-popup {
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: rgba(0,0,0,0.8);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.delete-popup > .backdrop {
+	position: fixed;
+	display: block;
+	left: 0;
+	top: 0;
+	width:100%;
+	height:100%;
+	z-index: 50;
+}
+.delete-popup > .box {
+	width: 400px;
+	background-color: white;
+	text-align: center;
+	z-index: 100;
+	border: 1px solid #000;
+	padding: 15px 10px;
+}
+.delete-popup > .box > p {
+	margin-bottom: 20px;
+}
+
+.naviguation {
+	position: fixed;
+	box-sizing: border-box;
+	width: 200px;
+	height: 100vh;
+	background-color: #00344d;
+	color: #EEE;
+}
+h1 {
+	font-size: 1.5em;
+	font-weight: bold;
+	margin: 10px;
+}
+.naviguation > hr {
+	margin: 10px;
+}
+
+.back-nav {
+	margin-top: 20px;
+}
+.back-nav > ul > li > a {
+	padding-left: 30px;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	color: #EEE;
+	text-decoration: none;
+}
+.back-nav > ul > li a:hover {
+	background-color: #005780;
+	cursor: pointer;
+}
+
+.back-nav .selected {
+	background-color: #002333;
+}
+
+.content {
+	/*height: 1000px;*/
+	min-height: 100vh;
+	margin-left: 200px;
+	width: 100%;
+	background-color: #E7E7F7;
+	padding: 40px 20px 20px 20px;
+}
+
+.content > h2 {
+	text-transform: uppercase;
+	font-size: 2em;
+	font-weight: bold;
+}
+.content > hr {
+	border: .5px solid black;
+}

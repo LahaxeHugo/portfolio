@@ -1,0 +1,155 @@
+header {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	background-color: #1A1E23;
+	padding: 15px 60px;
+}
+
+header > h2 {
+	font-weight: bold;
+  font-size: 1.8em;
+  color: #A43831;
+}
+
+.menu-toggle .burger-breads span {
+	display: block;
+	width: 33px;
+	height: 4px;
+	margin-bottom: 5px;
+	position: relative;
+	background: white;
+	z-index: 1;
+	border-radius: 3px;
+	overflow: hidden;
+}
+
+.menu-close .burger-breads span {
+	display: block;
+	width: 33px;
+	height: 4px;
+	margin-bottom: 5px;
+	position: relative;
+	background: #ddd;
+	z-index: 1;
+	transform: rotate(45deg) translate(-2px, -1px);
+}
+
+.menu-close .burger-breads span:nth-child(2) {
+	transform: rotate(135deg) translate(-6px, 9px);
+}
+.menu-close .burger-breads span:nth-child(3) {
+	opacity: 0;
+}
+
+.main-menu {
+	position: fixed;
+	top: 0;
+	right: -150px;
+	height: 100vh;
+	width: 150px;
+	background-color: #1A1E23;
+	z-index: 100;
+	font-size: 1em;
+	transition: right .3s ease;
+}
+
+.main-menu > ul > li:first-child {
+	border-top: 1px solid #ddd;
+}
+.main-menu > ul > li {
+	border-bottom: 1px solid #ddd;
+	padding : 10px 10px 5px 10px;
+}
+.main-menu > ul > li > a {
+	text-decoration: none;
+	color: white;
+	text-transform: uppercase;
+}
+.main-menu > ul > li > a:hover {
+	color: #A43831;
+}
+
+.main-menu .menu-close {
+	position: absolute;
+	left: 3px;
+	top: 20px;
+}
+
+.main-menu:target {
+	right: 0;
+}
+
+.main-menu:target + .backdrop {
+	position: fixed;
+	display: block;
+	left: 0;
+	top: 0;
+	width:100%;
+	height:100%;
+	z-index: 50;
+	background: rgba(0,0,0,0.8);
+}
+
+/*body:not(.main-menu) {
+	filter: blur(2px);
+}*/
+
+.menu-toggle .burger-breads {
+	width: 33px;
+	margin-top: 5px;
+}
+
+.menu-toggle > .burger-breads > span::after {
+	content: '';
+	display: block;
+	width: 100%;
+	position: relative;
+	left: -100%;
+	height: 4px;
+	background-color: #A43831;
+	transition: left .3s ease;
+}
+.menu-toggle > .burger-breads > span:nth-child(2)::after {
+	transition-delay: .15s;
+}
+.menu-toggle > .burger-breads > span:nth-child(3)::after {
+	transition-delay: .3s;
+}
+
+.menu-toggle > .burger-breads:hover > span::after {
+	left: 0;
+}
+
+@media (min-width: 800px) {
+	.main-menu {
+		position: relative;
+		width: auto;
+		height: auto;
+		left: 0;
+	}
+	.main-menu > ul {
+		display: flex;
+		padding: 0;
+		height: auto;
+		width: auto;
+		background: none;
+	}
+	.main-menu > ul > li {
+		border : 0!important;
+	}
+	.menu-toggle, .main-menu .menu-close {
+		display: none;
+	}
+}
+@media (max-width: 799px) {
+	.main-menu > ul {
+		margin-top: 41px;
+	}
+}
+
+@media (max-width: 900px) {
+	header {
+		padding: 15px 20px;
+	}
+}
