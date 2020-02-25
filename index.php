@@ -71,7 +71,7 @@ foreach($projects_data as $projects_el) {
   	<header>
     	<h2 class="logo"><?php echo $general_data[0]['name']?></h2>
     	
-			<a href="#main-menu" class="menu-toggle">
+			<a class="menu-toggle">
 				<div class="burger-breads">
 					<span></span>
 					<span></span>
@@ -80,7 +80,7 @@ foreach($projects_data as $projects_el) {
 			</a>
 			
 			<nav id="main-menu" class="main-menu">
-				<a href="#main-menu-toggle" class="menu-close">
+				<a class="menu-close">
 					<div class="burger-breads close">
 						<span></span>
 						<span></span>
@@ -103,7 +103,7 @@ foreach($projects_data as $projects_el) {
 			<h1><?php echo $general_data[0]['name'];?></h1>
 			<h2 class="job"><?php echo $general_data[0]['job'];?></h2>
 			<h2 class="description"><?php echo $general_data[0]['description'];?></h2>
-			<a href="" class="arrow-scrolldown"><img src="assets/img/arrow-scrolldown.svg" alt="scrolldown arrow"></a>
+			<a href="#about	" class="arrow-scrolldown"><img src="assets/img/arrow-scrolldown.svg" alt="scrolldown arrow"></a>
 		</section>
 		
 		<!-- A PROPOS -->
@@ -190,5 +190,7 @@ foreach($projects_data as $projects_el) {
 		<footer>
 			<p>© Hugo Lahaxe 2020. Tous droits réservés.</p>
 		</footer>
+		<script src="assets/js/jquery-3.4.1.min.js"></script>
+    <script src="assets/js/main.js"></script>
   </body>
 </html>

@@ -3,8 +3,8 @@
 include '../include.php';
 ( $dbObj = getconnectionObj() ) or die( $stopScript );
 
-$general = new general_info($dbObj, PORTFOLIO_SITE);
-$data = $general->load();
+$site = new site($dbObj, PORTFOLIO_SITE);
+$data = $site->load();
 //echo '<pre>'.print_r($data, TRUE).'</pre>';
 
 ?>

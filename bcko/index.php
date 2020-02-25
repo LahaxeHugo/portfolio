@@ -1,6 +1,9 @@
 <?php
 
-session_start();
+include '../include.php';
+( $dbObj = getconnectionObj() ) or die( $stopScript );
+$site = new site($dbObj, PORTFOLIO_SITE);
+$data = $site->load();
 
 ?>
 
@@ -9,6 +12,7 @@ session_start();
   <head>
     <meta charset="utf-8">
     <title>Back Office</title>
+    <link rel="icon" href="../assets/img/<?php echo $data[0]['icon']?>">
     <link rel="stylesheet" href="../assets/css/back.css">
   </head>
   <body>
